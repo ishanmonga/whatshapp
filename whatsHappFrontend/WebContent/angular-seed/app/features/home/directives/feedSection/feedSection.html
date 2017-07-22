@@ -1,0 +1,40 @@
+
+<div>
+	<div ng-repeat='feed in feeds'>
+		<div class="row well">
+			<div>
+				<label>{{feed.eventCreater.userFirstName}}
+					{{feed.eventCreater.userLastName}}</label><span>{{feed.createDate}}</span>
+			</div>
+			<div>
+				<p>Heading:{{feed.feedHeading}}</p>
+			</div>
+			<div>
+				<p>Message:{{feed.feedMessage}}</p>
+			</div>
+			<div ng-repeat="image in feed.feedMediaUrlList">
+				<img ng-src="{{image}}" />
+			</div>
+			<div>
+				<span><a href ng-click="feedLikeCounter(feed)">Like</a></span> <span>{{feed.feedLikesCount}}</span>
+
+			</div>
+
+			<div>
+				<span><a href ng-click="feedDislikesCounter(feed)">Dislike</a></span> <span>{{feed.feedDislikesCount}}</span>
+
+			</div>
+
+			<div>
+				Location:{{feed.feedAddress}}
+				<!-- 	<div class="col-sm-12 form-group">
+								<ng-map zoom="16" center="{{ctrl.event.eventGoogleAddress}}">
+								<marker position="{{ctrl.event.eventGoogleAddress}}"
+									title="You are here" animation="Animation.BOUNCE"
+									centered="true"></marker></ng-map>
+							</div> -->
+			</div>
+
+		</div>
+	</div>
+</div>

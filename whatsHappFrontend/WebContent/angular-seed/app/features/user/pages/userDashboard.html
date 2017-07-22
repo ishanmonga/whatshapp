@@ -1,0 +1,66 @@
+
+<div class="container" ng-controller="userDashboardController as ctrl">
+	<h1 class="well">User Dashboard-{{ctrl.user.userFirstName}}</h1>
+
+	<div class="col-md-6 col-md-offset-3">
+
+		<form name="form"  role="form" novalidate>
+			<h2>Edit Your Personal Details</h2>
+			<div class="form-group"
+				ng-class="{ 'has-error': form.userFirstName.$dirty && form.userFirstName.$error.required }">
+				<label for="userEmail">First name</label> <input type="text"
+					name="userFirstName" id="userFirstName" class="form-control"
+					ng-model="ctrl.user.userFirstName" required /> <span
+					ng-show="form.userFirstName.$dirty && form.userFirstName.$error.required"
+					class="help-block">First name is required</span>
+			</div>
+			<div class="form-group"
+				ng-class="{ 'has-error': form.userLastName.$dirty && form.userLastName.$error.required }">
+				<label for="userEmail">Last name</label> <input type="text"
+					name="userLastName" id="Text1" class="form-control"
+					ng-model="ctrl.user.userLastName" required /> <span
+					ng-show="form.userLastName.$dirty && form.userLastName.$error.required"
+					class="help-block">Last name is required</span>
+			</div>
+			<div class="form-group"
+				ng-class="{ 'has-error': form.userEmail.$dirty && form.userEmail.$error.required }">
+				<label for="userEmail">Username</label> <input type="text"
+					name="userEmail" id="userEmail" class="form-control"
+					ng-model="ctrl.user.userEmail" required /> <span
+					ng-show="form.userEmail.$dirty && form.userEmail.$error.required"
+					class="help-block">Username is required</span>
+			</div>
+
+			<div class="form-group">
+				<label for="userPhone">User Phone </label> <input type="text"
+					name="userPhone" id="userPhone" class="form-control"
+					ng-model="ctrl.user.userPhone" />
+			</div>
+			<div class="form-group">
+				<label>Enter Your Address</label><span class="mandatorySign">*</span>
+				<wh-us-address address="ctrl.user.useraddress"></wh-us-address>
+			</div>
+			<div class="form-group">
+				<button class="btn" type="submit" ng-click="ctrl.editUser()"> Edit Details</button>
+			</div>
+
+			<h2>Change Password</h2>
+			<div class="form-group>
+				<label for="userPassword">
+				New Password</label> <input type="password" name="userPassword"
+					id="userPassword" class="form-control"
+					ng-model="ctrl.userNewPassword"  />
+			</div>
+			<div class="form-group>
+				<label for="userPassword">
+				Confirm Password</label> <input type="password" name="userPassword"
+					id="userPassword" class="form-control"
+					ng-model="ctrl.userConfirmPassword"  />
+			</div>
+			<div class="form-group">
+				<button class="btn" type="submit" ng-click="ctrl.changePassword()">Change Password</button>
+			</div>
+		</form>
+	</div>
+</div>
+

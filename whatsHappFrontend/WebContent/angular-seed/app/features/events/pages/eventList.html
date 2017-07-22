@@ -1,0 +1,26 @@
+<!--  this page will have 3 columns one for the creation of the event, one for the search and other for the event listing with pagination and filters-->
+
+
+
+<div class="container" ng-controller="eventListController as ctrl">
+	<h1 class="well">Event Listing</h1>
+
+	<div ng-repeat='event in ctrl.events'>
+		<div>
+			<div class="col-sm-4">
+				<div class="thumbnail">
+					<img ng-src="{{event.eventThumbnail}}" alt="New York" width="400"
+						height="300">
+					<p>
+						<strong>{{event.eventName}}</strong>
+					</p>
+					<p>Date:{{event.eventDate}}</p>
+					<p>Time:{{event.eventTime}}</p>
+					<p>Address: {{event.eventGoogleAddress}}</p>
+					<button class="btn" ng-click="ctrl.getEventDetail(event.id)">Event
+						Details</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

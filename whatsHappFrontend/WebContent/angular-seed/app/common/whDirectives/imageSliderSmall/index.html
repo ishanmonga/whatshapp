@@ -1,0 +1,35 @@
+<!-- this iamge slider is a demo, that can be used anywhere.
+http://embed.plnkr.co/SiVmTy/
+ -->
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body ng-controller="MainCtrl">
+    <slider images="images" group="imagesPerSlide"></slider>
+    
+    <p>
+      <label>Images per slide</label>
+      <select ng-model="imagesPerSlide">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    </p>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.12.1/TweenMax.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-animate.min.js"></script>
+    
+    <script src="app.js"></script>
+    
+    <script>angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));</script>
+  </body>
+
+</html>

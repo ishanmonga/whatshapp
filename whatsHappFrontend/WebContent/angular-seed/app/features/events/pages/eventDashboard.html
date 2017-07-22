@@ -1,0 +1,84 @@
+<!--  this page will have 3 columns one for the creation of the event, one for the search and other for the event listing with pagination and filters-->
+
+
+
+<div class="container" ng-controller="eventDashboardController as ctrl">
+	<h1 class="well">{{ctrl.event.eventName}}</h1>
+	<!-- <wh-error-message messages='ctrl.messages.content'
+		type='ctrl.messages.type'></wh-error-message> -->
+
+	<wh-slider images="ctrl.images" group="ctrl.imagesPerSlide"></wh-slider>
+	<p>
+		<label>Images per slide</label> <select ng-model="imagesPerSlide">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select>
+	</p>
+<wh-social-share></wh-social-share>
+	<div class="col-lg-12 well">
+		<div class="row">
+			<div class="col-sm-12">
+
+				<!-- event image -->
+				<div class="row">
+					<div class="col-sm-12 form-group">
+						<label>Event Name:{{ctrl.event.eventName}}</label>
+					</div>
+				</div>
+
+
+
+				<div class="row">
+					<div class="col-sm-12 form-group">
+						<label><span>Event Time:{{ctrl.event.eventStartDate
+								| date:'fullDate'}}</span> <span>to</span> <span>{{ctrl.event.eventEndDate
+								| date:'fullDate'}}</span> <span>|</span><span>{{ctrl.event.eventStartTime
+								|date:'mediumTime'}}</span> </label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-12 form-group">
+						<label>Event Description:{{ctrl.event.eventDesc}}</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-12 form-group">
+						<label>Event Type:{{ctrl.event.eventType}}</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-12 form-group">
+						<uib-tabset active="active"> <uib-tab index="0"
+							heading="Event Location ">
+						Location:{{ctrl.event.eventGoogleAddress}}
+						<div class="col-sm-12 form-group">
+							<ng-map zoom="16" center="{{ctrl.event.eventGoogleAddress}}">
+							<marker position="{{ctrl.event.eventGoogleAddress}}"
+								title="You are here" animation="Animation.BOUNCE"
+								centered="true"></marker> </ng-map>
+						</div>
+
+						</uib-tab> <uib-tab index="1" heading="Terms & Conditions">
+						<div ng-bind-html="ctrl.event.eventTermsConditions"></div>
+
+						</uib-tab> <uib-tab index="2" heading="Event FAQ">
+						<div ng-bind-html="ctrl.event.eventFaq"></div>
+						</uib-tab> </uib-tabset>
+					</div>
+				</div>
+
+
+
+			</div>
+
+		</div>
+	</div>
+	 <!-- directive can be used as an attribute -->
+	  <a href="ctrl.discussURL" data-disqus-identifier="randomString"></a>
+    <div disqus="ctrl.id"></div>
+	
+</div>

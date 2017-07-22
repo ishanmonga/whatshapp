@@ -1,0 +1,66 @@
+<!--  this page will have 3 columns one for the creation of the event, one for the search and other for the event listing with pagination and filters-->
+
+
+
+<div class="container" ng-controller="eventController as ctrl">
+	<h1 class="well">Create Event</h1>
+	<!-- <wh-error-message messages='ctrl.messages.content'
+		type='ctrl.messages.type'></wh-error-message> -->
+
+    <slider images="ctrl.images" group="ctrl.imagesPerSlide"></slider>
+    
+    <p>
+      <label>Images per slide</label>
+      <select ng-model="imagesPerSlide">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    </p>
+
+	<div class="col-lg-12 well">
+		<div class="row">
+			<div class="col-sm-12">
+
+				<!-- event image -->
+				<div class="row">
+					<div class="col-sm-12 form-group">
+						<label>{{ctrl.event.eventName}}</label>
+					</div>
+				</div>
+
+
+
+				<div class="row">
+					<div class="col-sm-12 form-group">
+						<label><span>{{ctrl.event.eventStartDate}}</span> <span>to</span>
+							<span>{{ctrl.event.eventEndDate}}</span> <span>|</span><span>{{ctrl.event.eventStartTime}}</span>
+						</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-12 form-group">
+						<label>{{ctrl.event.eventDesc}}</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-12 form-group">
+						<label>The event is:{{ctrl.event.eventType}}</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-12 form-group">
+						<uib-tabset active="active"> <uib-tab index="0"
+							heading=" Terms & Conditions"></uib-tab> <uib-tab index="1"
+							heading="Event FAQ"></uib-tab> <uib-tab index="2"
+							heading="Event Location"></uib-tab> </uib-tabset>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
