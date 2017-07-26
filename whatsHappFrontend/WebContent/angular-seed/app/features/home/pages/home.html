@@ -1,21 +1,43 @@
-<div class="container-fluid">
-	<h1>Hello World!</h1>
-	<p>Resize the browser window to see the effect.</p>
-	<div class="row">
-		<div class="col-sm-3" style="background-color: lavender;">
-			<wh-profile-section></wh-profile-section>
+
+<section id="contant" style="padding-top: 85px;">
 
 
-
+	<div class="container-fluid visible-xs"
+		style="margin-top: 8px; background-color: #eee; padding: 10px;">
+		<div class="col-xs-4" align="center">
+			<a href="index.html#feeds"> <img
+				src="angular-seed/app/img/contract.png" class="img-responsive">
+				<p style="margin-bottom: -5px;">Feeds</p>
+			</a>
 		</div>
-		<div class="col-sm-6" style="background-color: lavenderblush;">
 
-			<wh-feed-section></wh-feed-section>
-
-
+		<div class="col-xs-4" align="center">
+			<a href="index.html#events"> <img
+				src="angular-seed/app/img/screen.png" class="img-responsive">
+				<p style="margin-bottom: -5px;">Events</p>
+			</a>
 		</div>
-		<div class="col-sm-3" style="background-color: lavender;">
-			<wh-feature-section></wh-feature-section>
+
+		<div class="col-xs-4" align="center">
+			<a href="city.html"> <img src="angular-seed/app/img/blogger.png"
+				class="img-responsive">
+				<p style="margin-bottom: -5px;">Stories</p>
+			</a>
 		</div>
 	</div>
-</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 col-xs-12 hidden-xs">
+				<wh-profile-section></wh-profile-section>
+
+			</div>
+			<div class="col-md-6 col-xs-12 " id="feeds">
+				<wh-feed-section></wh-feed-section>
+			</div>
+			<div class="col-md-3 col-xs-12 " id="events">
+				<wh-feature-section></wh-feature-section>
+			</div>
+		</div>
+	</div>
+</section>

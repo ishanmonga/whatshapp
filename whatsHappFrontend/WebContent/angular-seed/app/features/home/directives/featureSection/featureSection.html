@@ -1,19 +1,45 @@
-<!--  this page will have 3 columns one for the creation of the event, one for the search and other for the event listing with pagination and filters-->
 
-
-<div ng-repeat='event in events'>
-	<div class="row well">
-		<div class="thumbnail">
-			<img ng-src="{{event.eventThumbnail}}" alt="New York" width="400"
-				height="300">
-			<p>
-				<strong>{{event.eventName}}</strong>
-			</p>
-			<p>Date:{{event.eventDate}}</p>
-			<p>Time:{{event.eventTime}}</p>
-			<p>Address: {{event.eventGoogleAddress}}</p>
-			<button class="btn" ng-click="getEventDetail(event.id)">Event
-				Details</button>
-		</div>
+	<div align="center" style="padding-top: 20px; font-size: 16px;">Upcoming
+		Events</div>
+	<br>
+	<div class="event">
+		<a href="eventdetail.html"> <img
+			src="angular-seed/app/img/download.jpg" class="img-responsive"
+			style="height: 150px; width: 100%;" />
+			<div class="eventdes">
+				<h4 style="font-weight: 600;">Anatomy of Awakward</h4>
+				<p style="margin-top: -5px;">Sat, 6 May 2017 , 6:30PM</p>
+				<p style="margin-top: -10px;">Creative Summer Program is here
+					for a fun</p>
+				<hr style="border: 1px solid #fff; margin-top: -5px;">
+				<p style="margin-top: -10px;">
+					<a style="font-weight: 600;">Fun</a><span
+						style="float: right; margin-right: 15px; font-weight: 600;">Rs
+						350</span>
+				</p>
+			</div>
+		</a>
 	</div>
-</div>
+	<div class="event">
+		<a href="eventdetail.html"> <img src="angular-seed/app/img/3.jpg"
+			class="img-responsive" style="height: 150px; width: 100%;" />
+			<div class="eventdes">
+				<h4 style="font-weight: 600;">Creative Summer Camp</h4>
+				<p style="margin-top: -5px;">Sat, 20 Mar 2017 10:00AM</p>
+				<p style="margin-top: -10px;">Creative Summer Program is here
+					for a fun</p>
+				<hr style="border: 1px solid #fff; margin-top: -5px;">
+				<p style="margin-top: -10px;">
+					<a style="font-weight: 600;">Camp</a><span
+						style="float: right; margin-right: 15px; font-weight: 600;">Rs
+						1550</span>
+				</p>
+			</div>
+		</a>
+	</div>
+	<a href="event.html"
+		style="text-align: right; float: right; color: #000; font-size: 18px; text-decoration: underline">View
+		All</a>
+
+
+

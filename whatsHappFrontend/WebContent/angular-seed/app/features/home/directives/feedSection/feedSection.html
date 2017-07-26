@@ -1,40 +1,324 @@
 
-<div>
-	<div ng-repeat='feed in feeds'>
-		<div class="row well">
-			<div>
-				<label>{{feed.eventCreater.userFirstName}}
-					{{feed.eventCreater.userLastName}}</label><span>{{feed.createDate}}</span>
+	<div class="tweet">
+		<div class="row">
+			<div class="col-md-1 col-xs-2 ">
+				<img src="angular-seed/app/img/check.jpg"
+					style="height: 30px; width: 30px;" />
 			</div>
-			<div>
-				<p>Heading:{{feed.feedHeading}}</p>
-			</div>
-			<div>
-				<p>Message:{{feed.feedMessage}}</p>
-			</div>
-			<div ng-repeat="image in feed.feedMediaUrlList">
-				<img ng-src="{{image}}" />
-			</div>
-			<div>
-				<span><a href ng-click="feedLikeCounter(feed)">Like</a></span> <span>{{feed.feedLikesCount}}</span>
+			<div class="col-md-11 col-xs-10 ">
+				<div class="tweetbox">
+					<div class="form-group" style="margin-top: -8px;" id="tweethide">
+						<div class="input-group">
+							<input style="border-radius: 0px;" class="form-control	"
+								id="hide" type="text" name="search"
+								placeholder="What's happening?" /> <span
+								class="input-group-btn">
+								<button class="btn btn-search" type="submit"
+									style="margin-top: 0px;">
+									<i class="fa fa-twitter" style="font-size: 19px"></i>
+								</button>
+							</span>
 
+						</div>
+					</div>
+
+				</div>
+
+				<form enctype="multipart/form-data">
+					<div class="form-group" style="margin-top: -8px;" id="tweet" hidden>
+						<div class="input-group">
+							<textarea style="border-radius: 0px; margin-top: -30px;"
+								cols="65" rows="4" class="form-control 	" type="text"
+								name="search" placeholder="What's happening?"></textarea>
+
+
+						</div>
+						<div class="tweetpost">
+							<ul>
+								<li><input type="file" id="imgupload"
+									style="display: none;" /> <img id="OpenImgUpload"
+									src="angular-seed/app/img/camera.png" title="Upload Image"></li>
+								<li><input type="file" id="gifupload"
+									style="display: none;" /> <img id="OpengifUpload"
+									src="angular-seed/app/img/gif.png" title="Upload Gif"></li>
+								<li><a><img src="angular-seed/app/img/location.png"
+										title="Share Location" /></a>
+							</ul>
+						</div>
+						<div>
+							<a href="#" class="btn btnlogin" style="float: right">Tweet</a>
+						</div>
+					</div>
+
+				</form>
 			</div>
-
-			<div>
-				<span><a href ng-click="feedDislikesCounter(feed)">Dislike</a></span> <span>{{feed.feedDislikesCount}}</span>
-
-			</div>
-
-			<div>
-				Location:{{feed.feedAddress}}
-				<!-- 	<div class="col-sm-12 form-group">
-								<ng-map zoom="16" center="{{ctrl.event.eventGoogleAddress}}">
-								<marker position="{{ctrl.event.eventGoogleAddress}}"
-									title="You are here" animation="Animation.BOUNCE"
-									centered="true"></marker></ng-map>
-							</div> -->
-			</div>
-
 		</div>
 	</div>
-</div>
+
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<section class="post-heading" data-toggle="modal" data-target="#demo">
+				<div class="row">
+					<div class="title">
+						<h4 style="font-weight: 600">
+							Creative Summer Camp <span
+								style="float: right; padding-right: 15px; font-size: 15px;">20
+								Mar 2017</span>
+						</h4>
+					</div>
+					<div class="col-md-4 col-xs-6">
+
+						<img src="angular-seed/app/img/1.jpg" class="img-responsive" />
+
+					</div>
+
+					<div class="col-md-8 col-xs-12">
+
+						<p style="clear: both;">Creative Summer Program is here for a
+							fun filled learning. Creativity this summer is at it's new peak
+							with meaningful learning and deep diving into Craft, Culture and
+							Art for the holistic development of Children seeking creative
+							breaks.</p>
+
+					</div>
+
+				</div>
+			</section>
+			<div class="panel-heading">
+				<img class="img-circle pull-left" src="angular-seed/app/img/1.jpg"
+					alt="Raj" />
+				<h3>Raj Verma</h3>
+				<h5>
+					<span>Shared publicly</span> - <span>May 11, 2017</span>
+				</h5>
+			</div>
+
+			<section class="post-footer" style="margin-top: -15px;">
+				<hr>
+				<div class="post-footer-option">
+					<div class="row">
+						<div class="col-xs-12 list-unstyled">
+
+							<div class="col-xs-4">
+								<a href="#" style="margin-left: -5px;"><i
+									class="fa fa-thumbs-o-up" style="font-size: 15px"></i>&nbsp;Likes</a>
+							</div>
+							<div class="col-xs-4">
+								<a href="javascript:void(0)" id="comment"
+									style="margin-left: -15px;"><i class="fa  fa-commenting-o"
+									style="font-size: 15px"></i>&nbsp;Comment</a>
+							</div>
+							<div class="col-xs-4">
+								<a href="#"><i class="fa fa fa-share-alt"
+									style="font-size: 15px"></i>&nbsp;Share</a>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+				<div class="post-comment" id="commentsection"
+					style="display: none; margin-top: 10px;">
+					<div class="panel-google-plus-comment">
+						<img class="img-circle" src="angular-seed/app/img/1.jpg"
+							alt="User Image" />
+						<div class="panel-google-plus-textarea">
+							<textarea rows="3"></textarea>
+							<button type="submit" class="btn btnsignup disabled">Post
+								comment</button>
+							<button type="submit" id="cancel" class="btn btndrop">Cancel</button>
+
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+	</div>
+
+
+
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<section class="post-heading" data-toggle="modal" data-target="#demo">
+				<div class="row">
+					<div class="title">
+						<h4 style="font-weight: 600">
+							Creative Summer Camp <span
+								style="float: right; padding-right: 15px; font-size: 15px;">20
+								Mar 2017</span>
+						</h4>
+					</div>
+					<div class="col-md-4 col-xs-6">
+
+						<img src="angular-seed/app/img/3.jpg" class="img-responsive" />
+
+					</div>
+
+					<div class="col-md-8 col-xs-12">
+
+						<p style="clear: both;">Creative Summer Program is here for a
+							fun filled learning. Creativity this summer is at it's new peak
+							with meaningful learning and deep diving into Craft, Culture and
+							Art for the holistic development of Children seeking creative
+							breaks.</p>
+
+					</div>
+
+				</div>
+			</section>
+			<div class="panel-heading">
+				<img class="img-circle pull-left" src="angular-seed/app/img/1.jpg"
+					alt="Raj" />
+				<h3>Raj Verma</h3>
+				<h5>
+					<span>Shared publicly</span> - <span>May 11, 2017</span>
+				</h5>
+			</div>
+			<section class="post-footer" style="margin-top: -15px;">
+				<hr>
+				<div class="post-footer-option">
+					<div class="row">
+						<div class="col-xs-12 list-unstyled">
+
+							<div class="col-xs-4">
+								<a href="#" style="margin-left: -5px;"><i
+									class="fa fa-thumbs-o-up" style="font-size: 15px"></i>&nbsp;Likes</a>
+							</div>
+							<div class="col-xs-4">
+								<a href="javascript:void(0)" id="comment1"
+									style="margin-left: -15px;"><i class="fa  fa-commenting-o"
+									style="font-size: 15px"></i>&nbsp;Comment</a>
+							</div>
+							<div class="col-xs-4">
+								<a href="#"><i class="fa fa fa-share-alt"
+									style="font-size: 15px"></i>&nbsp;Share</a>
+							</div>
+
+
+						</div>
+
+
+					</div>
+				</div>
+				<div class="post-comment" id="commentsection1"
+					style="display: none; margin-top: 10px;">
+					<div class="panel-google-plus-comment">
+						<img class="img-circle" src="angular-seed/app/img/1.jpg"
+							alt="User Image" />
+						<div class="panel-google-plus-textarea">
+							<textarea rows="3"></textarea>
+							<button type="submit" class="btn btnsignup disabled">Post
+								comment</button>
+							<button type="submit" id="cancel1" class="btn btndrop">Cancel</button>
+
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+
+			</section>
+
+		</div>
+
+	</div>
+
+	<!----Modal--------->
+	<div class="modal fade" id="demo" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+
+			<div class="modal-content">
+
+
+				<div class="modal-body" style="margin-bottom: -25px;">
+
+
+					<div class="panel panel-default">
+						<button type="button" class="close" data-dismiss="modal"
+							style="margin-top: -30px;">
+							<img src="angular-seed/app/img/cross.png" />
+						</button>
+
+						<div class="panel-body">
+							<section class="post-heading">
+								<div class="row">
+									<div class="col-md-12 col-xs-12" style="padding-bottom: 15px;">
+										<img src="angular-seed/app/img/1.jpg" class="img-responsive"
+											style="width: 100%;" />
+									</div>
+									<div class="title">
+										<h4 style="font-weight: 600">
+											Creative Summer Camp <span
+												style="float: right; padding-right: 15px; font-size: 15px;">20
+												Mar 2017</span>
+										</h4>
+									</div>
+
+
+									<div class="col-md-12 col-xs-12">
+
+										<p style="clear: both;">Creative Summer Program is here
+											for a fun filled learning. Creativity this summer is at it's
+											new peak with meaningful learning and deep diving into Craft,
+											Culture and Art for the holistic development of Children
+											seeking creative breaks.</p>
+
+									</div>
+
+								</div>
+							</section>
+
+							<section class="post-footer" style="margin-top: -15px;">
+
+								<hr>
+								<div class="post-footer-option">
+									<div class="row">
+										<div class="col-xs-12 list-unstyled">
+
+											<div class="col-xs-4">
+												<a href="#" style="margin-left: -5px;"><i
+													class="fa fa-thumbs-o-up" style="font-size: 15px"></i>&nbsp;Likes</a>
+											</div>
+											<div class="col-xs-4">
+												<a href="javascript:void(0)" id="comment2"
+													style="margin-left: -15px;"><i
+													class="fa  fa-commenting-o" style="font-size: 15px"></i>&nbsp;Comment</a>
+											</div>
+											<div class="col-xs-4">
+												<a href="#"><i class="fa fa fa-share-alt"
+													style="font-size: 15px"></i>&nbsp;Share</a>
+											</div>
+
+
+										</div>
+									</div>
+								</div>
+								<div class="post-comment" id="commentsection2"
+									style="display: none; margin-top: 10px;">
+									<div class="panel-google-plus-comment">
+										<img class="img-circle" src="angular-seed/app/img/1.jpg"
+											alt="User Image" />
+										<div class="panel-google-plus-textarea">
+											<textarea rows="3"></textarea>
+											<button type="submit" class="btn btnsignup disabled">Post
+												comment</button>
+											<button type="submit" id="cancel2" class="btn btndrop">Cancel</button>
+
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+							</section>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
